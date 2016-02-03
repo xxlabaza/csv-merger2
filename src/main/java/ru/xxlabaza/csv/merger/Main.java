@@ -52,10 +52,13 @@ public class Main {
     static {
         PROGRAM_NAME = "java -jar csv-merger-1.0.0.jar";
         TEMPORARY_FOLDER_NAME = "./tmp";
-        LINES_PER_PASS = 100;
+        LINES_PER_PASS = (int) Runtime.getRuntime().maxMemory() / 2400;
     }
 
     public static void main (String[] args) throws IOException {
+        System.out.format("Total memory: %dMb\n", Runtime.getRuntime().maxMemory() / 1024 / 1024);
+        System.out.format("Lines per pass: %d\n", LINES_PER_PASS);
+
         val commandLine = parseArguments(args);
 
         val temporaryFolder = new File(TEMPORARY_FOLDER_NAME);
