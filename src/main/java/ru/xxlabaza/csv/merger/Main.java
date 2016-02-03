@@ -52,7 +52,7 @@ public class Main {
     static {
         PROGRAM_NAME = "java -jar csv-merger-1.0.0.jar";
         TEMPORARY_FOLDER_NAME = "./tmp";
-        LINES_PER_PASS = (int) Runtime.getRuntime().maxMemory() / 2400;
+        LINES_PER_PASS = (int) (Runtime.getRuntime().maxMemory() / 2400);
     }
 
     public static void main (String[] args) throws IOException {
